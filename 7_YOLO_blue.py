@@ -25,8 +25,8 @@ while True:
             if model.names[int(c)] == 'person':
                 annotator.box_label(b, model.names[int(c)])
                 top, left, bottom, right = b.numpy().astype(int)
-                print(top, left, bottom, right)
-                img[left:right, top:bottom, 0] = 255
+                # print(top, left, bottom, right)
+                img[left:right, top:bottom] = 0
 
     img = annotator.result()
     cv2.imshow('YOLO V8 Detection', img)
